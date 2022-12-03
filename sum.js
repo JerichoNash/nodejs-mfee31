@@ -1,5 +1,5 @@
 function sum(n){
-    let ans=(1+n)*n/2
-    console.log(ans)
+    let ans=(1+n)*n/2;
+    console.log(ans);
 }
-sum(10)
+sum(10);
