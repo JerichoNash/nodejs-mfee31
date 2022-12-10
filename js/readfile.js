@@ -15,7 +15,7 @@
 // readfile to promise:
 
 const fs = require('fs');
-let readfileToPromise = function change(filename,code){
+let readfileToPromise = function(filename,code){
     return new Promise((resolve, reject) => {
       fs.readFile('test.txt', 'utf-8', (err, data) => {
         if (err) {
@@ -26,7 +26,6 @@ let readfileToPromise = function change(filename,code){
       });
     });
   }
-
 
 readfileToPromise()
     .then((data) =>{
