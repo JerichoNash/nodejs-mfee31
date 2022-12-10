@@ -29,8 +29,8 @@ let readfileToPromise = function(filename,code){
 
 readfileToPromise()
     .then((data) =>{
-        console.log(data);
+        console.log('成功讀到資料: ', data);
     })
     .catch((err)=>{
-        console.err(err);
+        console.err('發生錯誤: ', err);
     })
