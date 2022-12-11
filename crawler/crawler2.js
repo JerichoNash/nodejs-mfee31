@@ -1,7 +1,7 @@
 // 1. 安裝 npm i axios
 // 2. 引用 require
 // 3. 去讀官方文件
-const axios = require('axios');
+const axios = require("axios");
 
 // http://54.71.133.152:3000/stocks?stockNo=2618&date=202211
 
@@ -14,10 +14,12 @@ const axios = require('axios');
 //     console.error(e);
 //   });
 
-
-async function doCrawler(){
-  let response = await axios.get('http://54.71.133.152:3000/stocks?stockNo=2618&date=202211');
-console.log(response.data);  
+// 改成 await 版本
+async function doCrawler() {
+  let response = await axios.get(
+    "http://54.71.133.152:3000/stocks?stockNo=2618&date=202211"
+  );
+  console.log(response.data);
 }
 
 doCrawler();
