@@ -12,7 +12,7 @@ const moment = require("moment");
 (async () => {
   try {
     let stockNo = await fs.readFile("stock.txt", "utf-8");
-    let date = moment().format('YYYYMMDD')
+    let date = moment().format("YYYYMMDD");
     let response = await axios.get(`http://54.71.133.152:3000/stocks`, {
       params: {
         stockNo,
