@@ -21,6 +21,7 @@ const Stock = () => {
     }
     getStocks();
   }, []);
+
   useEffect(() => {
     console.log("第二個參數是counter");
   }, [counter]);
@@ -39,12 +40,12 @@ const Stock = () => {
 
       {stocks.map((stock) => {
         return (
-          <div className="bg-white bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg m-6 cursor-pointer">
+          <div className="bg-white bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg m-6 cursor-pointer" key={stock.id}>
             <Link to={"/stock/1234"}>
               <h2 className="text-2xl font-bold mb-2 text-gray-800">
-                股票代碼
+                {stock.id}
               </h2>
-              <p className="text-gray-700">股票名稱</p>
+              <p className="text-gray-700">{stock.name}</p>
             </Link>
           </div>
         );
