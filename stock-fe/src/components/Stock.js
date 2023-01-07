@@ -27,12 +27,14 @@ const Stock = () => {
   }, [counter]);
 
   // hw
-  // TODO: 把預設值拿掉，跟 input 綁定
+  //把預設值拿掉，跟 input 綁定
   const [stockId, setStockId] = useState("5678");
   const [stockName, setStockName] = useState("耶誕快樂");
   async function handleSubmit(e) {
     console.log("handleSubmit");
+    // 關閉表單預設行為
     e.preventDefault();
+    // ajax
     let response = await axios.post("http://localhost:3001/api/stocks", {
       stockId,
       stockName,
@@ -82,6 +84,11 @@ const Stock = () => {
             type="text"
             id="stockId"
             name="stockId"
+            value={stockId}
+            onChange={(event)=>{
+              setStockId(event.target.value)
+              // e.target.value
+            }}
           />
         </div>
         <div className="mb-8 text-2xl">
@@ -93,6 +100,10 @@ const Stock = () => {
             type="text"
             id="stockName"
             name="stockName"
+            value={stockName}
+            onChange={(event)=>{
+              setStockName(event.target.value)
+            }}
           />
         </div>
         <button
